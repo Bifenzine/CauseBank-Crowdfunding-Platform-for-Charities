@@ -1,4 +1,3 @@
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Signin from "./components/Auth/signin.jsx";
@@ -28,9 +27,6 @@ import DonationsPage from "./Pages/DonationsPage/DonationsPage.jsx";
 import useTawkTo from "./Hooks/support/useTawkTo.js";
 
 function App() {
-
-  const {userOrganisation} = useAuthContext();
-  console.log("userOrganisation", userOrganisation);
   useTawkTo();
   return (
     <>
@@ -50,7 +46,7 @@ function App() {
           <Route path="/verify-email" element={<EmailVerification />} />
           <Route path="/causes/:id" element={<CauseDetails />} />
           <Route path="/donate/:causeId" element={<DonationPage />} />
-          <Route path="/donations" element={<DonationsPage/>} />
+          <Route path="/donations" element={<DonationsPage />} />
           <Route
             path="/organization/allOrganizations"
             element={<OrganizationsAll />}
