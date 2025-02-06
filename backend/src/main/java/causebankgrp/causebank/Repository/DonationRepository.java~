@@ -1,0 +1,28 @@
+package causebankgrp.causebank.Repository;
+
+import causebankgrp.causebank.Entity.Donation;
+import jakarta.transaction.Transactional;
+import org.jetbrains.annotations.NotNull;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.mongodb.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+import java.util.UUID;
+
+@Repository
+public interface DonationRepository extends JpaRepository<Donation, UUID> {
+    Page<Donation> findByCauseId(UUID causeId, Pageable pageable);
+    Page<Donation> findByDonor(UUID donorId, Pageable pageable);
+//    get all donations that are COMPLETED
+    @Query("SELECT d FROM Donation d WHERE d.status = 'COMPLETED'")
+    Page<Donation> getAllCompletedDonations(Pageable pageable);
+
+
+
+
+
+}

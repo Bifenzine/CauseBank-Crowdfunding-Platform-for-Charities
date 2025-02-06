@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* In your global CSS file */
+@layer utilities {
+    .animate-scroll {
+      animation: scroll 40s linear infinite;
+    }
+    
+    .animate-scroll:hover {
+      animation-play-state: paused;
+    }
+  }
+  

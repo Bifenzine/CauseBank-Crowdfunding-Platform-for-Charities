@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+    <th:block th:fragment="content">
+        <p>Hello <span th:text="${userName}">User</span>,</p>
+        
+        <p>Thank you for creating an account with CauseBank. To complete your registration, please verify your email address by clicking the button below:</p>
+        
+        <div style="text-align: center;">
+            <a th:href="${verificationLink}" class="button">Verify Email Address</a>
+        </div>
+        
+        <p>This link will expire in 24 hours. If you didn't create an account, you can safely ignore this email.</p>
+        
+        <p>If the button doesn't work, copy and paste this link into your browser:</p>
+        <p style="word-break: break-all; font-size: 12px; color: #666;">
+            <span th:text="${verificationLink}">verification-link</span>
+        </p>
+        
+        <p>Best regards,<br>The CauseBank Team</p>
+    </th:block>
+</body>
+</html>

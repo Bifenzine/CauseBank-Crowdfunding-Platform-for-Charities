@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-CausebankApplication<causebank>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "causebankgrp.causebank.CausebankApplication",
+      "projectName": "causebank",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}

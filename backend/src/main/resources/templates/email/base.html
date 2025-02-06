@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      /* Base styles */
+      body {
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      .email-container {
+        max-width: 600px;
+        margin: 20px auto;
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .email-header {
+        background: #2196f3;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        border-radius: 8px 8px 0 0;
+      }
+      .email-content {
+        padding: 30px;
+        color: #333333;
+      }
+      .email-footer {
+        text-align: center;
+        padding: 20px;
+        background: #f8f9fa;
+        border-radius: 0 0 8px 8px;
+        font-size: 12px;
+        color: #666666;
+      }
+      .button {
+        display: inline-block;
+        padding: 12px 24px;
+        background: #2196f3;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        margin: 20px 0;
+      }
+      .button:hover {
+        background: #1976d2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <div class="email-header">
+        <h1 th:text="${headerTitle}">Welcome</h1>
+      </div>
+
+      <div class="email-content">
+        <!-- Content will be inserted here -->
+        <th:block th:replace="${content}"> Content goes here </th:block>
+      </div>
+
+      <div class="email-footer">
+        <p>
+          ©
+          <span th:text="${#dates.year(#dates.createNow())}">2024</span>
+          CauseBank. All rights reserved.
+        </p>
+        <p>If you didn't request this email, please ignore it.</p>
+      </div>
+    </div>
+  </body>
+</html>

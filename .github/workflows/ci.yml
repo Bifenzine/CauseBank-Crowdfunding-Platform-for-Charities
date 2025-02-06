@@ -1,0 +1,59 @@
+name: Full-Stack CauseBank CI/CD (No Docker) main branch development
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Navigate to frontend directory
+        run: cd frontend
+
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: npm install
+
+      - name: Run frontend tests
+        working-directory: frontend
+        run: npm test
+
+      - name: Build frontend
+        working-directory: frontend
+        run: npm run build
+
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: "17"
+          distribution: "temurin"
+
+      - name: Navigate to backend directory
+        run: cd backend/causebank
+
+      - name: Build backend with Maven
+        working-directory: backend/causebank
+        run: mvn clean package
+
+      - name: Run backend tests
+        working-directory: backend/causebank
+        run: mvn test
