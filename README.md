@@ -3,7 +3,6 @@
 
 ![CauseBank Platform Screenshot](/api/placeholder/800/400)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Made with Spring Boot](https://img.shields.io/badge/Made%20with-Spring%20Boot-green.svg)](https://spring.io/projects/spring-boot)
 [![React](https://img.shields.io/badge/React-17.0.2-blue.svg)](https://reactjs.org/)
 
@@ -15,12 +14,10 @@
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-  - [Environment Variables](#environment-variables)
 - [API Documentation](#api-documentation)
 - [Database Schema](#database-schema)
 - [Security](#security)
 - [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 ## 🌟 Overview
@@ -101,7 +98,7 @@ CauseBank revolutionizes charitable fundraising by providing a secure, transpare
 ### Installation
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/causebank.git
+git clone https://github.com/bifenzine/CauseBank-Crowdfunding-Platform-for-Charities.git
 
 # Backend setup
 cd backend
@@ -119,22 +116,9 @@ npm install
 npm start
 ```
 
-### Environment Variables
-```env
-# Backend
-SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/causebank
-SPRING_DATASOURCE_USERNAME=your_username
-SPRING_DATASOURCE_PASSWORD=your_password
-AWS_ACCESS_KEY=your_aws_access_key
-AWS_SECRET_KEY=your_aws_secret_key
-
-# Frontend
-REACT_APP_API_URL=http://localhost:8080/api
-REACT_APP_GOOGLE_CLIENT_ID=your_google_client_id
-```
 
 ## 📚 API Documentation
-API documentation is available at `http://localhost:8080/swagger-ui.html` when running locally.
+API documentation is available at `http://localhost:8081/swagger-ui.html` when running locally.
 
 ## 🎯 Contributing
 1. Fork the repository
@@ -143,7 +127,3 @@ API documentation is available at `http://localhost:8080/swagger-ui.html` when r
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
----
